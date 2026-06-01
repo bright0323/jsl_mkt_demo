@@ -169,7 +169,7 @@
                 type="button"
                 aria-label="查看 AI 智慧維養補充說明"
                 data-info-title="AI 智慧維養"
-                data-info-copy="好的社區管理，不是等設備壞了才處理。AI 智慧維養會協助整理電梯與公設設備的使用狀態，讓管委會和物業更早掌握維護時機。住戶不一定每天看得到系統，但會感受到設備更穩、生活更少被打擾。"
+                data-info-copy="好的社區管理，不是等設備壞了才處理。AI 智慧維養會協助整理電梯與公設設備的使用狀態，讓管委會和物業更早掌握維護時機。您不一定每天看得到系統，但會感受到設備更穩、生活更少被打擾。"
               >
                 i
               </button>
@@ -179,7 +179,7 @@
             <div class="point-list">
               <div><strong>提前看見風險</strong><span>將設備使用與異常變化整理成健康趨勢，協助管理端在問題發生前先一步留意。</span></div>
               <div><strong>減少突發中斷</strong><span>從電梯到公設機電，透過更有節奏的檢查與保養，降低臨時故障對生活造成的打擾。</span></div>
-              <div><strong>管理透明安心</strong><span>讓管委會、物業與住戶都能更清楚理解設備維護狀態，讓社區管理更有依據，也更值得信任。</span></div>
+              <div><strong>管理透明安心</strong><span>讓管委會、物業與您都能更清楚理解設備維護狀態，讓社區管理更有依據，也更值得信任。</span></div>
             </div>
           </div>
         </article>
@@ -200,7 +200,7 @@
                 type="button"
                 aria-label="查看 Keyless 門禁補充說明"
                 data-info-title="Keyless 門禁"
-                data-info-copy="Keyless 門禁讓手機成為公區通行的識別鑰匙。手機完成綁定後，靠近門禁即可安全解鎖，不需採集臉部資料，也減少磁扣遺失或外借帶來的管理風險。對住戶，是更安心的科技使用；對社區，是更有秩序的入口把關。"
+                data-info-copy="Keyless 門禁讓手機成為公區通行的識別鑰匙。手機完成綁定後，靠近門禁即可安全解鎖，不需採集臉部資料，也減少磁扣遺失或外借帶來的管理風險。對您，是更安心的科技使用；對社區，是更有秩序的入口把關。"
               >
                 i
               </button>
@@ -219,44 +219,69 @@
           <div class="demo-area">
             <div class="phone-frame">
               <div class="device-screen alert-screen">
-                <div class="alert-head fire-head">
-                  <span>Fire Alert</span>
+                <div class="app-status">
+                  <span>09:42</span>
+                  <div><i></i><i></i><i></i></div>
+                </div>
+                <div class="app-bar">
+                  <span>住戶安全</span>
+                  <strong>消防避難指引</strong>
+                </div>
+                <div class="fire-alert-card">
+                  <span>火警警示</span>
                   <strong>8F 西側偵測煙霧</strong>
+                  <small>請依樓層逃生路線與避難提醒行動</small>
                 </div>
-                <div class="status-card">
-                  <span>目前狀態</span>
-                  <small>火警受信總機已啟動，物業中心同步收到警示。</small>
-                </div>
-                <div class="mini-map">
-                  <span class="route"></span>
-                  <b class="pin pin-a"></b>
-                  <b class="pin pin-b"></b>
-                </div>
-                <ul class="action-list">
-                  <li>依照綠色路線前往安全梯</li>
-                  <li>避免搭乘電梯</li>
-                  <li>低姿勢移動並關閉身後門扇</li>
-                </ul>
-                <div class="building-actions">緊急照明開啟｜公區門禁解鎖｜電梯迫降</div>
-                <div class="status-card">
-                  <span>住戶提醒</span>
-                  <small>若走廊煙霧濃度過高，請留在戶內並以濕毛巾封住門縫，等待救援指示。</small>
-                </div>
-                <div class="status-card">
-                  <span>物業處置</span>
-                  <small>巡檢人員已前往 8F 西側確認，消防廣播同步啟動。</small>
+                <section class="floor-card">
+                  <div class="card-head">
+                    <span>12F 平面圖</span>
+                    <small>建議逃生路線</small>
+                  </div>
+                  <div class="real-map">
+                    <img src="escape.png" alt="12F 樓層逃生路線圖" />
+                  </div>
+                </section>
+                <section class="escape-card">
+                  <div class="card-head">
+                    <span>避難提醒</span>
+                    <small>請保持冷靜</small>
+                  </div>
+                  <div class="escape-steps">
+                    <div><b>01</b><span>前往安全梯</span><small>依照亮色路線移動</small></div>
+                    <div><b>02</b><span>避免搭乘電梯</span><small>電梯已啟動迫降管制</small></div>
+                    <div><b>03</b><span>低姿勢移動</span><small>若有濃煙，請靠低處前進</small></div>
+                  </div>
+                </section>
+                <div class="linkage-card">
+                  <span>大樓逃生機制</span>
+                  <div>
+                    <strong><em>全棟緊急照明</em><b>已啟動</b></strong>
+                    <strong><em>大樓公區門禁</em><b>已解鎖</b></strong>
+                    <strong><em>電梯逃生機制</em><b>已迫降</b></strong>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="item-copy">
-            <h2>消防安全指示</h2>
-            <h3>警報發生時，讓下一步更清楚</h3>
-            <p>火災資訊、逃生路線與即時建議同步推送，並啟動緊急照明、公區門禁解鎖與電梯自動迫降。</p>
+            <div class="item-title-row">
+              <h2>消防安全指示</h2>
+              <button
+                class="info-trigger"
+                type="button"
+                aria-label="查看消防安全指示補充說明"
+                data-info-title="消防安全指示"
+                data-info-copy="真正的安心，是危急時刻不只聽見警報，還知道下一步怎麼走。消防安全指示會在您的手機上呈現火警位置、樓層逃生路線與避難提醒，並同步啟動緊急照明、公區門禁解鎖與電梯自動迫降。當方向清楚、通道暢通，家人的安全都更有保障。"
+              >
+                i
+              </button>
+            </div>
+            <h3>危急時刻，安心有路</h3>
+            <p>火警發生時，手機即時呈現火警位置、樓層逃生路線與避難提醒，並啟動大樓安全連動，讓家人在關鍵時刻有清楚方向可以依循。</p>
             <div class="point-list">
-              <div><strong>即時告警</strong><span>快速掌握火點與影響區域。</span></div>
-              <div><strong>逃生導引</strong><span>以平面圖呈現建議路線。</span></div>
-              <div><strong>大樓連動</strong><span>同步啟動公區安全機制。</span></div>
+              <div><strong>警示有方向</strong><span>火警資訊同步推送到手機，讓您不只是聽見警報，也能掌握火災狀況、知道該往哪裡去。</span></div>
+              <div><strong>逃生不慌亂</strong><span>依您所住樓層呈現逃生動線與逃生建議，讓緊急避難不再只靠臨場判斷，多一分指引，少一分慌亂。</span></div>
+              <div><strong>避難無阻礙</strong><span>緊急照明開啟、公區門禁解鎖、電梯自動迫降同步啟動，讓逃生動線更順暢，減少避難受阻的風險。</span></div>
             </div>
           </div>
         </article>
@@ -265,44 +290,69 @@
           <div class="demo-area">
             <div class="phone-frame">
               <div class="device-screen alert-screen">
-                <div class="alert-head quake-head">
-                  <span>Earthquake Alert</span>
+                <div class="app-status">
+                  <span>09:42</span>
+                  <div><i></i><i></i><i></i></div>
+                </div>
+                <div class="app-bar">
+                  <span>住戶安全</span>
+                  <strong>地震避難指引</strong>
+                </div>
+                <div class="quake-alert-card">
+                  <span>地震預警</span>
                   <strong>預估震度 4 級</strong>
+                  <small>震央：台灣東部海域｜請先就地避難</small>
                 </div>
-                <div class="status-card">
-                  <span>預警資訊</span>
-                  <small>震波預估 12 秒後抵達，請先就地避難。</small>
-                </div>
-                <div class="mini-map quake-map">
-                  <span class="route"></span>
-                  <b class="pin pin-a"></b>
-                  <b class="pin pin-b"></b>
-                </div>
-                <ul class="action-list">
-                  <li>先就地避難，遠離玻璃與櫃體</li>
-                  <li>震後依路線前往集合點</li>
-                  <li>等待物業確認公區狀態</li>
-                </ul>
-                <div class="building-actions">緊急照明開啟｜公區門禁解鎖｜電梯迫降</div>
-                <div class="status-card">
-                  <span>震後檢查</span>
-                  <small>系統將協助物業檢視電梯、公區門禁與消防設備狀態。</small>
-                </div>
-                <div class="status-card">
-                  <span>集合提醒</span>
-                  <small>確認搖晃停止後，依指示前往一樓戶外集合點。</small>
+                <section class="escape-card">
+                  <div class="card-head">
+                    <span>避難提醒</span>
+                    <small>請保持冷靜</small>
+                  </div>
+                  <div class="escape-steps">
+                    <div><b>01</b><span>先就地避難</span><small>遠離玻璃、櫃體與吊掛物</small></div>
+                    <div><b>02</b><span>震後再移動</span><small>確認搖晃停止後再離開</small></div>
+                    <div><b>03</b><span>依指示集合</span><small>等待物業確認公區狀態</small></div>
+                  </div>
+                </section>
+                <section class="floor-card">
+                  <div class="card-head">
+                    <span>12F 平面圖</span>
+                    <small>震後避難路線</small>
+                  </div>
+                  <div class="real-map">
+                    <img src="escape.png" alt="12F 樓層逃生路線圖" />
+                  </div>
+                </section>
+                <div class="linkage-card">
+                  <span>大樓逃生機制</span>
+                  <div>
+                    <strong><em>全棟緊急照明</em><b>已啟動</b></strong>
+                    <strong><em>大樓公區門禁</em><b>已解鎖</b></strong>
+                    <strong><em>電梯逃生機制</em><b>已迫降</b></strong>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="item-copy">
-            <h2>地震預警連動</h2>
-            <h3>預警、避難、連動一次完成</h3>
-            <p>接收地震資訊後，即時提供避難建議與逃生路線，協助住戶在緊急情境中穩定判斷。</p>
+            <div class="item-title-row">
+              <h2>地震預警連動</h2>
+              <button
+                class="info-trigger"
+                type="button"
+                aria-label="查看地震預警連動補充說明"
+                data-info-title="地震預警連動"
+                data-info-copy="地震最讓人不安的，是不知道下一秒該怎麼反應。地震預警連動會在您的手機上呈現預估震度、震央資訊與避難提醒，協助您提前警覺、先就地避難；震後必要時，再依路線指引移動。大樓也會同步啟動緊急照明、公區門禁解鎖與電梯迫降，讓家人在關鍵時刻多一分準備。"
+              >
+                i
+              </button>
+            </div>
+            <h3>多一秒準備，多一分安心</h3>
+            <p>地震發生時，手機即時呈現預估震度、震央資訊與避難提醒，並啟動大樓安全機制，讓您在關鍵時刻更快掌握狀況進行因應。</p>
             <div class="point-list">
-              <div><strong>提前通知</strong><span>爭取反應時間，降低慌亂。</span></div>
-              <div><strong>避難建議</strong><span>依情境推送清楚步驟。</span></div>
-              <div><strong>設備連動</strong><span>啟動照明、門禁與電梯安全模式。</span></div>
+              <div><strong>提早一刻反應</strong><span>地震資訊即時推送到手機，讓您在搖晃前先提高警覺，爭取保護自己與家人的時間。</span></div>
+              <div><strong>避難判斷更清楚</strong><span>依震度與情境提供避難提醒，協助您先就地避難、遠離玻璃與櫃體，減少慌亂中的錯誤判斷。</span></div>
+              <div><strong>大樓同步守護</strong><span>緊急照明、公區門禁解鎖與電梯迫降同步啟動；較大震度後，也可提供避難路線，協助震後移動更安全。</span></div>
             </div>
           </div>
         </article>
@@ -335,13 +385,24 @@
             </div>
           </div>
           <div class="item-copy">
-            <h2>雲端對講機</h2>
-            <h3>重要聯繫，不受位置限制</h3>
-            <p>整合門口機與警衛室通話入口，住戶可透過平板介面直接撥打，讓社區聯繫更即時。</p>
+            <div class="item-title-row">
+              <h2>雲端對講機</h2>
+              <button
+                class="info-trigger"
+                type="button"
+                aria-label="查看雲端對講機補充說明"
+                data-info-title="雲端對講機"
+                data-info-copy="雲端對講機讓門口機不再被傳統設備綁架與限制。您可以透過手機或平板接聽門口機視訊，不論人在客廳、房間，甚至外出，都能確認訪客、即時通話並遠端開門。少了傳統對講機的佈線與設備維修負擔，生活更自由，未來管理也更省心。"
+              >
+                i
+              </button>
+            </div>
+            <h3>隨心應門，安心開門</h3>
+            <p>以手機與平板取代傳統室內對講機，無論在家中或外出，都能接聽門口機視訊、遠端開門，也減少日後佈線與設備維修負擔。</p>
             <div class="point-list">
-              <div><strong>即時通話</strong><span>快速聯繫門口機或警衛室。</span></div>
-              <div><strong>雲端接續</strong><span>不侷限在單一室內機位置。</span></div>
-              <div><strong>介面整合</strong><span>與住戶服務入口一致管理。</span></div>
+              <div><strong>接聽不必到門邊</strong><span>客廳、臥室或書房都能用手機和平板接聽門口機，不再被固定室內機的位置限制。</span></div>
+              <div><strong>外出也能放心應門</strong><span>人在外也能看見門口訪客、即時通話並遠端開門，重要來訪不再只能等回家處理。</span></div>
+              <div><strong>降低維護負擔</strong><span>以行動裝置取代傳統對講機，減少佈線、拉線與設備維修成本，未來管理更輕鬆。</span></div>
             </div>
           </div>
         </article>
