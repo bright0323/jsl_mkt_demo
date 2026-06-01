@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>星河帝寶｜健康主題</title>
+    <meta name="theme-color" content="#060b12" />
+    <style>
+      :root { background: #060b12; }
+      html, body { margin: 0; min-height: 100%; background: #060b12; color: #f5efe2; }
+      .stage { background: #060b12; }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=20260530-frame" />
+    <link rel="stylesheet" href="safety.css?v=20260601-framework" />
+  </head>
+  <body style="background: #060b12; color: #f5efe2">
+    <main class="stage safety-stage" style="background: #060b12" aria-label="星河帝寶健康主題">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="safety-shade" aria-hidden="true"></div>
+      <div class="safety-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="safety-grid" aria-hidden="true"></div>
+
+      <section class="safety-workbench" aria-label="健康主題內容">
+        <div class="detail-bar">
+          <nav class="item-tabs" aria-label="健康主題項目">
+            <button class="item-tab is-active" type="button" data-item="overview">健康總覽</button>
+          </nav>
+        </div>
+
+        <article class="smart-item overview-panel is-active" data-panel="overview">
+          <div class="item-copy overview-copy">
+            <h2>健康</h2>
+            <h3>把舒適環境，變成每天都能感受的安心</h3>
+            <p>健康主題將以室內環境、空氣品質與居住舒適為核心，後續可依實際科技內容補上完整項目，先以總覽影片呈現健康宅的整體氛圍。</p>
+          </div>
+          <div class="demo-area">
+            <button class="feature-video" type="button" data-open-video="能源效率.mp4" aria-label="播放健康總覽影片">
+              <video src="能源效率.mp4" muted playsinline preload="metadata"></video>
+              <span class="play-mark" aria-hidden="true"></span>
+              <span class="video-label">健康總覽影片</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <a class="back-home" href="index.html" aria-label="返回首頁">返回</a>
+      <div class="video-modal" aria-hidden="true"><button class="modal-close" type="button" aria-label="關閉影片">×</button><video controls playsinline></video></div>
+      <div class="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="info-title"><div class="info-dialog"><button class="info-close" type="button" aria-label="關閉補充說明">×</button><h2 id="info-title"></h2><p class="info-copy"></p></div></div>
+    </main>
+    <script src="safety.js"></script>
+  </body>
+</html>

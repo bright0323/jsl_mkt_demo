@@ -475,7 +475,7 @@
 
 .item-tabs {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   overflow: hidden;
   border: 1px solid rgba(214, 179, 106, 0.24);
   border-radius: 8px;
@@ -607,9 +607,14 @@
 }
 
 .device-screen {
+  display: block;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   border-radius: 13px;
   color: #f8f2e5;
   background:
@@ -697,7 +702,8 @@
 }
 
 .maintenance-screen {
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .control-summary {
@@ -736,6 +742,7 @@
   margin-top: 3px;
   color: #fff7e7;
   font-size: 23px;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -868,6 +875,398 @@
   margin-top: 4px;
   color: rgba(245, 239, 226, 0.45);
   font-size: 10px;
+}
+
+.energy-summary strong {
+  font-size: 17px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.energy-summary em {
+  color: rgba(245, 239, 226, 0.52);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.impact-hero-card {
+  margin: 0 18px 10px;
+  border: 1px solid rgba(214, 179, 106, 0.22);
+  border-radius: 10px;
+  padding: 11px 12px;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(214, 179, 106, 0.14), transparent 45%),
+    rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 247, 231, 0.06);
+}
+
+.impact-hero-card > span {
+  display: block;
+  margin-bottom: 9px;
+  color: rgba(255, 247, 231, 0.82);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.impact-hero-card div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.impact-hero-card strong {
+  display: block;
+  border-radius: 8px;
+  padding: 8px 9px;
+  background: rgba(6, 9, 13, 0.3);
+}
+
+.impact-hero-card b {
+  display: block;
+  margin-top: 4px;
+  color: #fff7e7;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.impact-hero-card small {
+  display: block;
+  color: rgba(245, 239, 226, 0.46);
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+.bems-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(150px, 0.75fr);
+  gap: 10px;
+  padding: 0 18px 10px;
+}
+
+.bems-chart-card,
+.load-shed-card {
+  min-height: 202px;
+  border: 1px solid rgba(214, 179, 106, 0.16);
+  border-radius: 9px;
+  padding: 11px;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 1px 0 rgba(255, 247, 231, 0.05);
+}
+
+.power-chart {
+  position: relative;
+  height: 148px;
+  overflow: hidden;
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px) 0 36px / 100% 22px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px) 0 36px / 28px 100%,
+    rgba(6, 9, 13, 0.32);
+}
+
+.chart-legend {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  left: 10px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  color: rgba(245, 239, 226, 0.52);
+  font-size: 8px;
+  pointer-events: none;
+}
+
+.chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chart-legend span::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 0;
+  border-top: 2px solid currentColor;
+}
+
+.legend-limit {
+  color: rgba(217, 118, 91, 0.9);
+}
+
+.legend-current {
+  color: rgba(154, 194, 184, 0.94);
+}
+
+.legend-forecast {
+  color: rgba(214, 179, 106, 0.94);
+}
+
+.power-chart svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.limit-line,
+.actual-line,
+.forecast-line {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.limit-line {
+  top: 42px;
+  height: 1px;
+  border-top: 2px dashed rgba(217, 118, 91, 0.66);
+}
+
+.actual-line {
+  bottom: 31px;
+  height: 42px;
+  border-bottom: 3px solid rgba(125, 207, 166, 0.9);
+  clip-path: polygon(0 74%, 16% 63%, 32% 68%, 48% 51%, 64% 58%, 80% 38%, 100% 34%, 100% 100%, 0 100%);
+  background: linear-gradient(180deg, rgba(125, 207, 166, 0.16), transparent);
+}
+
+.forecast-line {
+  right: 10px;
+  bottom: 18px;
+  left: 49%;
+  height: 61px;
+  border-bottom: 3px dashed rgba(232, 200, 133, 0.95);
+  clip-path: polygon(0 70%, 24% 55%, 48% 40%, 72% 26%, 100% 17%, 100% 100%, 0 100%);
+  background: linear-gradient(180deg, rgba(232, 200, 133, 0.16), transparent);
+}
+
+.chart-area {
+  opacity: 1;
+}
+
+.current-area {
+  fill: rgba(154, 194, 184, 0.08);
+}
+
+.forecast-area {
+  fill: rgba(214, 179, 106, 0.1);
+}
+
+.chart-line {
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.current-chart-line {
+  stroke: rgba(154, 194, 184, 0.96);
+}
+
+.forecast-chart-line {
+  stroke: rgba(214, 179, 106, 0.96);
+  stroke-dasharray: 6 6;
+}
+
+.chart-axis {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: rgba(245, 239, 226, 0.36);
+  font-size: 8px;
+  pointer-events: none;
+}
+
+.chart-axis span:last-child {
+  text-align: right;
+}
+
+.peak-dot {
+  position: absolute;
+  right: 18px;
+  top: 19px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(232, 200, 133, 0.96);
+  box-shadow: 0 0 18px rgba(232, 200, 133, 0.5);
+}
+
+.bems-advice {
+  margin-top: 9px;
+  padding: 8px 10px;
+}
+
+.load-shed-list {
+  display: grid;
+  gap: 7px;
+}
+
+.usage-share {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid rgba(245, 239, 226, 0.08);
+  border-radius: 9px;
+  padding: 9px;
+  background: rgba(6, 9, 13, 0.28);
+}
+
+.share-ring {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      rgba(154, 194, 184, 0.92) 0 46%,
+      rgba(214, 179, 106, 0.9) 46% 74%,
+      rgba(146, 164, 183, 0.86) 74% 90%,
+      rgba(245, 239, 226, 0.32) 90% 100%
+    );
+  position: relative;
+}
+
+.share-ring::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: #0b1118;
+}
+
+.share-ring strong {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.share-ring strong {
+  color: rgba(255, 247, 231, 0.86);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.share-list {
+  display: grid;
+  gap: 5px;
+}
+
+.share-list div {
+  display: grid;
+  grid-template-columns: 8px 1fr auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.share-list i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.share-ac {
+  background: rgba(154, 194, 184, 0.92);
+}
+
+.share-light {
+  background: rgba(214, 179, 106, 0.9);
+}
+
+.share-vent {
+  background: rgba(146, 164, 183, 0.86);
+}
+
+.share-other {
+  background: rgba(245, 239, 226, 0.36);
+}
+
+.share-list span,
+.share-list strong {
+  font-size: 10px;
+}
+
+.share-list span {
+  color: rgba(245, 239, 226, 0.64);
+}
+
+.share-list strong {
+  color: rgba(255, 247, 231, 0.86);
+  font-weight: 500;
+}
+
+.load-shed-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid rgba(245, 239, 226, 0.08);
+  border-radius: 7px;
+  padding: 7px 8px;
+  background: rgba(6, 9, 13, 0.34);
+}
+
+.load-shed-list span {
+  color: rgba(245, 239, 226, 0.76);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.load-shed-list strong {
+  color: rgba(232, 200, 133, 0.94);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.impact-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 0 18px 14px;
+}
+
+.impact-row div {
+  border: 1px solid rgba(214, 179, 106, 0.16);
+  border-radius: 9px;
+  padding: 8px 9px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(214, 179, 106, 0.12), transparent 45%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.impact-row span {
+  display: block;
+  color: rgba(245, 239, 226, 0.58);
+  font-size: 10px;
+}
+
+.impact-row strong {
+  display: block;
+  margin-top: 3px;
+  color: #fff7e7;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.impact-row small {
+  display: block;
+  margin-top: 4px;
+  color: rgba(245, 239, 226, 0.42);
+  font-size: 9px;
+  line-height: 1.25;
 }
 
 .health-ring {
@@ -1633,4 +2032,1838 @@
   color: #fff7e7;
   background: rgba(8, 13, 19, 0.72);
   font-size: 28px;
+}
+
+.ev-charge-screen {
+  background:
+    radial-gradient(circle at 72% 24%, rgba(65, 213, 190, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(18, 24, 29, 0.96), rgba(7, 12, 16, 0.98));
+}
+
+.ev-hero {
+  margin: 0 18px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) 148px;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.ev-visual {
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+  border: 1px solid rgba(208, 181, 116, 0.24);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 28% 46%, rgba(77, 235, 205, 0.16), transparent 35%),
+    linear-gradient(145deg, rgba(19, 29, 35, 0.94), rgba(7, 11, 15, 0.98));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.ev-visual::before {
+  content: "";
+  position: absolute;
+  inset: 18px 20px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent, rgba(72, 218, 194, 0.18), transparent),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 26px);
+  transform: perspective(240px) rotateX(62deg);
+  transform-origin: center bottom;
+  opacity: 0.44;
+}
+
+.ev-energy-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 62%;
+  background:
+    linear-gradient(90deg, rgba(37, 224, 192, 0.06), rgba(78, 234, 204, 0.28)),
+    repeating-linear-gradient(105deg, transparent 0 16px, rgba(143, 255, 226, 0.16) 16px 17px);
+  filter: drop-shadow(0 0 18px rgba(60, 224, 194, 0.32));
+}
+
+.ev-energy-fill::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  right: -1px;
+  width: 1px;
+  height: 72%;
+  background: rgba(154, 255, 231, 0.72);
+  box-shadow: 0 0 18px rgba(87, 240, 211, 0.9);
+}
+
+.ev-car {
+  position: absolute;
+  left: 5%;
+  right: 4%;
+  bottom: 18px;
+  z-index: 2;
+  width: 91%;
+  height: auto;
+  overflow: visible;
+}
+
+.ev-shadow {
+  fill: rgba(0, 0, 0, 0.42);
+  filter: blur(5px);
+}
+
+.ev-body {
+  fill: rgba(15, 23, 28, 0.88);
+  stroke: rgba(134, 231, 214, 0.6);
+  stroke-width: 1.4;
+}
+
+.ev-cabin {
+  fill: rgba(21, 36, 44, 0.92);
+  stroke: rgba(210, 185, 121, 0.42);
+  stroke-width: 1;
+}
+
+.ev-window {
+  fill: rgba(104, 201, 213, 0.24);
+  stroke: rgba(163, 241, 231, 0.34);
+  stroke-width: 0.8;
+}
+
+.ev-highlight {
+  fill: none;
+  stroke: rgba(108, 244, 215, 0.78);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(68, 232, 201, 0.46));
+}
+
+.ev-wheel {
+  fill: rgba(4, 7, 9, 0.95);
+  stroke: rgba(194, 177, 130, 0.42);
+  stroke-width: 1;
+}
+
+.ev-hub {
+  fill: rgba(75, 226, 202, 0.38);
+}
+
+.ev-percent {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  display: grid;
+  gap: 2px;
+}
+
+.ev-percent strong {
+  color: rgba(248, 250, 245, 0.96);
+  font-size: 36px;
+  font-weight: 520;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-shadow: 0 0 18px rgba(62, 225, 197, 0.32);
+}
+
+.ev-percent span {
+  color: rgba(210, 220, 216, 0.68);
+  font-size: 11px;
+}
+
+.ev-stats {
+  display: grid;
+  gap: 8px;
+}
+
+.ev-stat,
+.ev-info-card,
+.ev-smart-row {
+  border: 1px solid rgba(208, 181, 116, 0.2);
+  border-radius: 12px;
+  background: rgba(17, 24, 29, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.ev-stat {
+  padding: 12px 12px 10px;
+}
+
+.ev-stat span,
+.ev-info-card span,
+.ev-smart-row span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(202, 211, 207, 0.62);
+  font-size: 10px;
+}
+
+.ev-stat strong {
+  color: rgba(245, 244, 237, 0.92);
+  font-size: 17px;
+  font-weight: 520;
+}
+
+.ev-info-grid {
+  margin: 0 18px 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ev-info-card {
+  padding: 12px 12px 10px;
+}
+
+.ev-info-card strong {
+  color: rgba(246, 246, 240, 0.93);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.ev-info-card em {
+  margin-left: 3px;
+  color: rgba(202, 211, 207, 0.62);
+  font-size: 11px;
+  font-style: normal;
+}
+
+.ev-smart-card {
+  margin: 0 18px 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ev-smart-row {
+  position: relative;
+  padding: 13px 14px 12px 36px;
+}
+
+.ev-smart-row::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(82, 229, 202, 0.9);
+  box-shadow: 0 0 12px rgba(82, 229, 202, 0.8);
+}
+
+.ev-smart-row strong {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(248, 247, 240, 0.93);
+  font-size: 13px;
+  font-weight: 520;
+}
+
+.ev-smart-row p {
+  margin: 0;
+  color: rgba(210, 218, 214, 0.66);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.ev-cockpit-top {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  margin: 0;
+  padding: 16px 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(8, 13, 17, 0.96), rgba(8, 13, 17, 0.72));
+  backdrop-filter: blur(12px);
+}
+
+.ev-cockpit-top span {
+  color: rgba(109, 236, 211, 0.78);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ev-cockpit-top strong {
+  color: rgba(245, 244, 236, 0.82);
+  font-size: 12px;
+  font-weight: 520;
+}
+
+.ev-cockpit {
+  position: relative;
+  min-height: 324px;
+  margin: 0 16px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 164px;
+  column-gap: 18px;
+  align-items: center;
+  border: 1px solid rgba(150, 178, 170, 0.16);
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(13, 21, 26, 0.92), rgba(5, 9, 12, 0.98));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 22px 42px rgba(0, 0, 0, 0.22);
+}
+
+.ev-cockpit::before {
+  content: "";
+  position: absolute;
+  inset: 18px 28px;
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgba(126, 242, 219, 0.08) 50%, transparent 50.2%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 42px);
+  mask-image: radial-gradient(ellipse at center, black 12%, transparent 72%);
+  opacity: 0.72;
+}
+
+.ev-main-readout,
+.ev-side-panel {
+  position: relative;
+  z-index: 3;
+}
+
+.ev-main-readout {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  padding: 28px 0 0 20px;
+}
+
+.ev-main-readout span,
+.ev-side-panel span,
+.ev-progress-label span,
+.ev-console-metrics span {
+  display: block;
+  color: rgba(201, 214, 210, 0.56);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.ev-main-readout strong {
+  display: block;
+  margin-top: 8px;
+  color: rgba(250, 252, 247, 0.96);
+  font-size: 48px;
+  font-weight: 430;
+  line-height: 0.95;
+  text-shadow: 0 0 24px rgba(82, 229, 202, 0.22);
+}
+
+.ev-main-readout em {
+  display: block;
+  margin-top: 12px;
+  color: rgba(223, 213, 184, 0.78);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.ev-car-stage {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
+  height: 304px;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  min-width: 0;
+  margin-left: 94px;
+  overflow: hidden;
+}
+
+.ev-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(390px, 92%);
+  height: 164px;
+  border-radius: 42% 42% 52% 52%;
+  background:
+    radial-gradient(ellipse at center, rgba(78, 235, 207, 0.26), rgba(78, 235, 207, 0.08) 46%, transparent 72%);
+  filter: blur(0.5px);
+  opacity: 0.82;
+  transform: translate(-50%, -42%);
+  animation: evChargeBreath 3.8s ease-in-out infinite;
+}
+
+.ev-fill-plane {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(300px, 62%);
+  height: 54px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(48, 226, 194, 0.02), rgba(70, 236, 205, 0.14)),
+    repeating-linear-gradient(90deg, transparent 0 22px, rgba(177, 255, 239, 0.08) 22px 23px);
+  filter: drop-shadow(0 0 20px rgba(67, 233, 202, 0.18));
+  opacity: 0.62;
+  mask-image: linear-gradient(90deg, transparent 0, black 10%, black 88%, transparent 100%);
+  transform: translate(-50%, -8%);
+  animation: evChargeFlow 4.6s ease-in-out infinite;
+}
+
+.ev-line-car {
+  position: relative;
+  z-index: 2;
+  width: min(440px, 106%);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 22px 26px rgba(0, 0, 0, 0.32));
+}
+
+.ev-line-shadow {
+  fill: rgba(0, 0, 0, 0.38);
+  filter: blur(7px);
+}
+
+.ev-line-body,
+.ev-line-glass,
+.ev-line-soft,
+.ev-line-detail,
+.ev-line-light,
+.ev-energy-thread,
+.ev-line-wheel,
+.ev-line-hub,
+.ev-line-wheel-mark {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.ev-line-body {
+  stroke: url("#evCarStroke");
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.ev-line-soft {
+  stroke: rgba(171, 227, 217, 0.34);
+  stroke-width: 1.2;
+}
+
+.ev-line-glass {
+  fill: rgba(78, 150, 163, 0.12);
+  stroke: rgba(181, 237, 228, 0.46);
+  stroke-width: 1.35;
+}
+
+.ev-line-detail {
+  stroke: rgba(206, 185, 134, 0.34);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+}
+
+.ev-line-light {
+  stroke: rgba(111, 242, 216, 0.82);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px rgba(87, 235, 207, 0.54));
+}
+
+.ev-energy-thread {
+  stroke: rgba(86, 235, 207, 0.58);
+  stroke-width: 1.15;
+  stroke-dasharray: 7 9;
+  stroke-linecap: round;
+}
+
+.ev-line-wheel {
+  stroke: rgba(214, 193, 144, 0.46);
+  stroke-width: 1.25;
+}
+
+.ev-line-hub {
+  stroke: rgba(126, 236, 216, 0.56);
+  stroke-width: 1.2;
+}
+
+.ev-line-wheel-mark {
+  stroke: rgba(174, 218, 209, 0.23);
+  stroke-width: 1;
+}
+
+.ev-car-art {
+  position: relative;
+  z-index: 3;
+  width: min(520px, 116%);
+  height: auto;
+  overflow: visible;
+  transform: translateY(10px);
+  filter: drop-shadow(0 26px 30px rgba(0, 0, 0, 0.38));
+}
+
+.ev-car-ground {
+  fill: rgba(0, 0, 0, 0.42);
+  filter: blur(8px);
+}
+
+.ev-car-underlight,
+.ev-car-charge-wave {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.ev-car-underlight {
+  stroke: rgba(79, 232, 205, 0.5);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 13px rgba(79, 232, 205, 0.5));
+}
+
+.ev-car-body {
+  fill: url("#evBodyPaint");
+  stroke: rgba(197, 240, 230, 0.58);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+}
+
+.ev-car-sheen {
+  fill: url("#evBodySheen");
+}
+
+.ev-car-roof {
+  fill: rgba(19, 28, 32, 0.9);
+  stroke: rgba(216, 191, 132, 0.42);
+  stroke-width: 1.2;
+}
+
+.ev-car-glass {
+  fill: url("#evGlassPaint");
+  stroke: rgba(183, 244, 235, 0.46);
+  stroke-width: 1.1;
+}
+
+.ev-car-glass-cut,
+.ev-car-belt,
+.ev-car-door,
+.ev-car-handle,
+.ev-car-arch {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.ev-car-glass-cut {
+  stroke: rgba(213, 187, 126, 0.34);
+  stroke-width: 1;
+}
+
+.ev-car-belt {
+  stroke: rgba(219, 234, 227, 0.32);
+  stroke-width: 1;
+}
+
+.ev-car-door {
+  stroke: rgba(211, 190, 139, 0.24);
+  stroke-width: 1;
+}
+
+.ev-car-handle {
+  stroke: rgba(219, 234, 227, 0.45);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.ev-car-light-front,
+.ev-car-light-rear {
+  fill: none;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 7px rgba(92, 236, 210, 0.58));
+}
+
+.ev-car-light-front {
+  stroke: rgba(105, 241, 215, 0.88);
+  stroke-width: 3;
+}
+
+.ev-car-light-rear {
+  stroke: rgba(214, 181, 106, 0.74);
+  stroke-width: 3;
+}
+
+.ev-car-arch {
+  stroke: rgba(222, 239, 233, 0.28);
+  stroke-width: 1.2;
+}
+
+.ev-car-wheel {
+  fill: url("#evWheelGlow");
+  stroke: rgba(211, 190, 139, 0.52);
+  stroke-width: 1.2;
+}
+
+.ev-car-rim {
+  fill: rgba(8, 12, 14, 0.74);
+  stroke: rgba(143, 236, 219, 0.58);
+  stroke-width: 1.4;
+}
+
+.ev-car-spokes {
+  fill: none;
+  stroke: rgba(221, 232, 228, 0.42);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.ev-car-charge-wave {
+  stroke: rgba(94, 240, 213, 0.42);
+  stroke-width: 1.4;
+  stroke-dasharray: 8 10;
+  filter: drop-shadow(0 0 8px rgba(94, 240, 213, 0.38));
+}
+
+.ev-reference-car {
+  position: relative;
+  z-index: 3;
+  width: min(520px, 116%);
+  height: auto;
+  overflow: visible;
+  transform: translateY(9px);
+  filter: drop-shadow(0 22px 26px rgba(0, 0, 0, 0.32));
+}
+
+.ev-car-source {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(12px);
+  opacity: 0.92;
+  filter:
+    brightness(0)
+    invert(94%)
+    sepia(8%)
+    saturate(520%)
+    hue-rotate(118deg)
+    drop-shadow(0 0 9px rgba(85, 230, 204, 0.18))
+    drop-shadow(0 22px 24px rgba(0, 0, 0, 0.34));
+}
+
+.ev-car-stage:has(.ev-car-source) .ev-fill-plane {
+  display: none;
+}
+
+.ev-car-source + .ev-reference-car {
+  display: none;
+}
+
+.ev-ref-shadow {
+  fill: rgba(0, 0, 0, 0.36);
+  filter: blur(8px);
+}
+
+.ev-ref-main,
+.ev-ref-glass,
+.ev-ref-detail,
+.ev-ref-arch,
+.ev-ref-charge {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.ev-ref-main {
+  stroke: rgba(224, 238, 232, 0.82);
+  stroke-width: 2.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 7px rgba(85, 230, 204, 0.18));
+}
+
+.ev-ref-glass {
+  fill: rgba(89, 169, 180, 0.12);
+  stroke: rgba(176, 231, 222, 0.72);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+}
+
+.ev-ref-detail {
+  stroke: rgba(205, 214, 208, 0.5);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ev-ref-arch {
+  stroke: rgba(224, 238, 232, 0.78);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.ev-ref-wheel {
+  fill: rgba(5, 8, 10, 0.76);
+  stroke: rgba(224, 238, 232, 0.82);
+  stroke-width: 2;
+}
+
+.ev-ref-rim {
+  fill: rgba(8, 16, 18, 0.74);
+  stroke: rgba(176, 231, 222, 0.72);
+  stroke-width: 1.7;
+}
+
+.ev-ref-hub {
+  fill: rgba(86, 226, 200, 0.28);
+  stroke: rgba(225, 237, 231, 0.45);
+  stroke-width: 1;
+}
+
+.ev-ref-charge {
+  stroke: rgba(86, 226, 200, 0.52);
+  stroke-width: 1.4;
+  stroke-dasharray: 8 10;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px rgba(86, 226, 200, 0.36));
+  animation: evChargeLine 2.8s linear infinite;
+}
+
+@keyframes evChargeBreath {
+  0%,
+  100% {
+    opacity: 0.48;
+    transform: translate(-50%, -42%) scaleX(0.96) scaleY(0.9);
+    filter: blur(1px);
+  }
+
+  50% {
+    opacity: 0.92;
+    transform: translate(-50%, -42%) scaleX(1.04) scaleY(1);
+    filter: blur(0.3px) drop-shadow(0 0 20px rgba(76, 230, 204, 0.28));
+  }
+}
+
+@keyframes evChargeFlow {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: translate(calc(-50% - 8px), -8%);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: translate(calc(-50% + 8px), -8%);
+  }
+}
+
+@keyframes evChargeLine {
+  from {
+    stroke-dashoffset: 0;
+    opacity: 0.38;
+  }
+
+  50% {
+    opacity: 0.72;
+  }
+
+  to {
+    stroke-dashoffset: -36;
+    opacity: 0.38;
+  }
+}
+
+.ev-top-car {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 104%);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 26px 28px rgba(0, 0, 0, 0.42));
+}
+
+.ev-top-shadow {
+  fill: rgba(0, 0, 0, 0.46);
+  filter: blur(7px);
+}
+
+.ev-top-body {
+  fill: rgba(15, 23, 27, 0.96);
+  stroke: rgba(150, 237, 219, 0.42);
+  stroke-width: 1.6;
+}
+
+.ev-top-glass {
+  fill: rgba(91, 170, 181, 0.22);
+  stroke: rgba(184, 244, 236, 0.32);
+  stroke-width: 1;
+}
+
+.ev-top-roof {
+  fill: rgba(23, 36, 42, 0.9);
+  stroke: rgba(209, 184, 124, 0.34);
+  stroke-width: 1;
+}
+
+.ev-top-light,
+.ev-charge-line {
+  fill: none;
+  stroke: rgba(95, 239, 211, 0.8);
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 7px rgba(80, 235, 205, 0.7));
+}
+
+.ev-charge-line {
+  stroke-dasharray: 5 7;
+  opacity: 0.8;
+}
+
+.ev-top-wheel {
+  fill: rgba(4, 7, 9, 0.96);
+  stroke: rgba(198, 180, 132, 0.45);
+  stroke-width: 1.2;
+}
+
+.ev-top-hub {
+  fill: rgba(84, 224, 201, 0.4);
+}
+
+.ev-charge-port {
+  display: none;
+}
+
+.ev-charge-port span {
+  position: absolute;
+  inset: 5px;
+  border-radius: inherit;
+  background: rgba(103, 244, 219, 0.9);
+}
+
+.ev-center-charge {
+  position: absolute;
+  z-index: 5;
+  right: 8px;
+  top: 45px;
+  min-width: 84px;
+  padding: 10px 12px;
+  border-left: 1px solid rgba(101, 233, 207, 0.42);
+  background: linear-gradient(90deg, rgba(10, 16, 20, 0.02), rgba(10, 16, 20, 0.56));
+}
+
+.ev-center-charge span {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(108, 236, 212, 0.68);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.ev-center-charge strong {
+  color: rgba(249, 251, 246, 0.94);
+  font-size: 28px;
+  font-weight: 420;
+  line-height: 1;
+}
+
+.ev-side-panel {
+  grid-column: 2;
+  grid-row: 1;
+  padding-right: 18px;
+  padding-left: 0;
+  display: grid;
+  gap: 14px;
+  justify-self: stretch;
+}
+
+.ev-side-panel div {
+  padding: 0 0 12px;
+  border-bottom: 1px solid rgba(211, 190, 139, 0.16);
+}
+
+.ev-side-panel div:last-child {
+  border-bottom: 0;
+}
+
+.ev-side-panel strong {
+  display: block;
+  margin-top: 5px;
+  color: rgba(246, 246, 239, 0.94);
+  font-size: 22px;
+  font-weight: 440;
+}
+
+.ev-side-panel em,
+.ev-console-metrics em {
+  color: rgba(205, 215, 210, 0.62);
+  font-size: 11px;
+  font-style: normal;
+}
+
+.ev-bottom-console {
+  margin: 0 16px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.ev-charge-progress,
+.ev-console-metrics {
+  border: 1px solid rgba(208, 181, 116, 0.18);
+  border-radius: 14px;
+  background: rgba(14, 22, 27, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.ev-charge-progress {
+  padding: 14px;
+}
+
+.ev-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.ev-progress-label strong {
+  color: rgba(243, 238, 222, 0.84);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ev-progress-track {
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.ev-progress-track span {
+  display: block;
+  width: 62%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(65, 221, 193, 0.75), rgba(223, 190, 116, 0.88));
+  box-shadow: 0 0 14px rgba(75, 232, 203, 0.45);
+}
+
+.ev-console-metrics {
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ev-console-metrics div {
+  min-width: 0;
+}
+
+.ev-console-metrics strong {
+  display: block;
+  margin-top: 6px;
+  color: rgba(246, 246, 239, 0.92);
+  font-size: 16px;
+  font-weight: 460;
+  white-space: nowrap;
+}
+
+.irrigation-screen {
+  background:
+    radial-gradient(circle at 30% 18%, rgba(96, 199, 148, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(18, 25, 24, 0.96), rgba(7, 12, 13, 0.98));
+}
+
+.irrigation-hero {
+  margin: 0 18px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px;
+  gap: 10px;
+}
+
+.irrigation-map {
+  position: relative;
+  min-height: 210px;
+  overflow: hidden;
+  border: 1px solid rgba(196, 178, 122, 0.2);
+  border-radius: 14px;
+  background:
+    linear-gradient(120deg, rgba(24, 38, 34, 0.92), rgba(9, 15, 17, 0.96)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.028) 0 1px, transparent 1px 34px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.irrigation-map::before {
+  content: "";
+  position: absolute;
+  inset: 18px 28px;
+  border: 1px solid rgba(198, 178, 118, 0.16);
+  border-radius: 42% 58% 48% 52%;
+  transform: rotate(-5deg);
+}
+
+.garden-zone {
+  position: absolute;
+  display: grid;
+  gap: 4px;
+  min-width: 92px;
+  padding: 10px 12px;
+  border: 1px solid rgba(113, 208, 154, 0.22);
+  border-radius: 12px;
+  background: rgba(17, 31, 28, 0.76);
+  box-shadow: 0 0 18px rgba(76, 188, 132, 0.08);
+}
+
+.garden-zone span {
+  color: rgba(209, 220, 211, 0.62);
+  font-size: 10px;
+}
+
+.garden-zone strong {
+  color: rgba(235, 245, 235, 0.92);
+  font-size: 14px;
+  font-weight: 520;
+}
+
+.garden-zone.attention {
+  border-color: rgba(214, 185, 113, 0.36);
+  background: rgba(36, 34, 24, 0.76);
+}
+
+.zone-entry {
+  top: 24px;
+  left: 24px;
+}
+
+.zone-court {
+  top: 82px;
+  left: 44%;
+  transform: translateX(-50%);
+}
+
+.zone-walk {
+  right: 24px;
+  top: 36px;
+}
+
+.zone-roof {
+  right: 52px;
+  bottom: 24px;
+}
+
+.sensor-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(106, 224, 153, 0.95);
+  box-shadow: 0 0 12px rgba(106, 224, 153, 0.82);
+}
+
+.dot-a {
+  left: 34%;
+  top: 42%;
+}
+
+.dot-b {
+  right: 34%;
+  top: 30%;
+}
+
+.dot-c {
+  right: 28%;
+  bottom: 27%;
+}
+
+.water-route {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+
+.water-route path {
+  fill: none;
+  stroke: rgba(92, 218, 175, 0.38);
+  stroke-width: 2;
+  stroke-dasharray: 7 9;
+  stroke-linecap: round;
+  animation: irrigationFlow 4s linear infinite;
+}
+
+.irrigation-kpi {
+  display: grid;
+  gap: 8px;
+}
+
+.irrigation-kpi div,
+.decision-grid div,
+.irrigation-list div {
+  border: 1px solid rgba(196, 178, 122, 0.18);
+  border-radius: 12px;
+  background: rgba(16, 24, 24, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.irrigation-kpi div {
+  padding: 12px;
+}
+
+.irrigation-kpi span,
+.decision-copy span,
+.decision-grid span,
+.irrigation-list span,
+.irrigation-list em {
+  display: block;
+  color: rgba(205, 214, 207, 0.6);
+  font-size: 10px;
+  font-style: normal;
+}
+
+.irrigation-kpi strong {
+  display: block;
+  margin-top: 7px;
+  color: rgba(246, 247, 239, 0.94);
+  font-size: 24px;
+  font-weight: 450;
+}
+
+.twin-decision {
+  margin: 0 18px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 10px;
+}
+
+.decision-copy {
+  padding: 14px;
+  border: 1px solid rgba(110, 216, 160, 0.22);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(104, 221, 162, 0.12), transparent 38%),
+    rgba(15, 27, 25, 0.76);
+}
+
+.decision-copy strong {
+  display: block;
+  margin-top: 8px;
+  color: rgba(245, 245, 236, 0.9);
+  font-size: 15px;
+  font-weight: 520;
+  line-height: 1.55;
+}
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.decision-grid div {
+  padding: 10px 11px;
+}
+
+.decision-grid strong {
+  display: block;
+  margin-top: 6px;
+  color: rgba(242, 243, 235, 0.88);
+  font-size: 12px;
+  font-weight: 520;
+}
+
+.irrigation-list {
+  margin: 0 18px 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.irrigation-list div {
+  padding: 11px 12px;
+}
+
+.irrigation-list strong {
+  display: block;
+  margin: 5px 0 4px;
+  color: rgba(244, 244, 235, 0.9);
+  font-size: 13px;
+  font-weight: 520;
+}
+
+@keyframes irrigationFlow {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.plant-dashboard {
+  margin: 0 18px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+  gap: 10px;
+}
+
+.plant-model-card,
+.plant-summary div,
+.watering-advice,
+.plant-list-card,
+.weather-chart-card {
+  border: 1px solid rgba(196, 178, 122, 0.18);
+  border-radius: 14px;
+  background: rgba(14, 22, 21, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.plant-model-card {
+  overflow: hidden;
+}
+
+.plant-card-head {
+  padding: 13px 15px 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.plant-card-head span,
+.mini-title {
+  color: rgba(111, 216, 155, 0.78);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.plant-card-head strong {
+  color: rgba(226, 231, 222, 0.64);
+  font-size: 10px;
+}
+
+.plant-model {
+  position: relative;
+  height: 244px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(98, 206, 148, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(16, 29, 27, 0.1), rgba(5, 10, 11, 0.38));
+}
+
+.plant-twin-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  padding: 4px 10px 12px;
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.36));
+}
+
+.plant-twin-image {
+  background:
+    radial-gradient(circle at 50% 44%, rgba(103, 220, 155, 0.08), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+}
+
+.plant-image-placeholder {
+  display: none;
+}
+
+.tree-canopy {
+  position: absolute;
+  border: 1px solid rgba(134, 225, 158, 0.44);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, rgba(137, 225, 156, 0.42), rgba(41, 91, 67, 0.72));
+  box-shadow: 0 0 20px rgba(77, 178, 118, 0.16);
+}
+
+.canopy-a {
+  top: 20px;
+  left: 92px;
+  width: 118px;
+  height: 82px;
+}
+
+.canopy-b {
+  top: 35px;
+  left: 156px;
+  width: 128px;
+  height: 92px;
+}
+
+.canopy-c {
+  top: 64px;
+  left: 72px;
+  width: 150px;
+  height: 88px;
+}
+
+.tree-trunk {
+  position: absolute;
+  left: 163px;
+  top: 122px;
+  width: 18px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(126, 100, 65, 0.72), rgba(198, 166, 104, 0.38));
+}
+
+.soil-layer {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  border-radius: 999px;
+}
+
+.soil-layer.top {
+  top: 170px;
+  height: 12px;
+  background: rgba(108, 86, 53, 0.62);
+}
+
+.soil-layer.mid {
+  top: 187px;
+  height: 22px;
+  background: rgba(74, 58, 43, 0.72);
+}
+
+.soil-layer.base {
+  top: 214px;
+  height: 12px;
+  background: rgba(43, 35, 29, 0.82);
+}
+
+.root-system {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 6px;
+  width: calc(100% - 80px);
+  height: 108px;
+}
+
+.root-system path {
+  fill: none;
+  stroke: rgba(214, 187, 120, 0.48);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.sensor-chip {
+  position: absolute;
+  min-width: 82px;
+  padding: 8px 10px;
+  border: 1px solid rgba(111, 216, 155, 0.24);
+  border-radius: 10px;
+  background: rgba(8, 16, 15, 0.72);
+}
+
+.sensor-chip span,
+.plant-summary span,
+.watering-advice span,
+.plant-row span {
+  display: block;
+  color: rgba(205, 214, 207, 0.58);
+  font-size: 10px;
+}
+
+.sensor-chip strong,
+.plant-summary strong,
+.plant-row strong {
+  display: block;
+  margin-top: 4px;
+  color: rgba(245, 245, 236, 0.92);
+  font-size: 13px;
+  font-weight: 520;
+}
+
+.sensor-chip.soil {
+  right: 16px;
+  top: 139px;
+}
+
+.sensor-chip.root {
+  left: 16px;
+  bottom: 28px;
+}
+
+.plant-side {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+}
+
+.plant-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.plant-summary div {
+  position: relative;
+  padding: 13px 12px 11px;
+  min-height: 62px;
+}
+
+.plant-summary strong {
+  font-size: 17px;
+  font-weight: 460;
+}
+
+.plant-summary .warning {
+  border-color: rgba(214, 179, 106, 0.32);
+  background:
+    radial-gradient(circle at 88% 22%, rgba(214, 179, 106, 0.12), transparent 46%),
+    rgba(28, 25, 18, 0.74);
+}
+
+.plant-summary .warning strong {
+  color: rgba(229, 190, 104, 0.96);
+}
+
+.summary-icon {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(111, 216, 155, 0.24);
+  border-radius: 50%;
+  background: rgba(12, 24, 21, 0.72);
+}
+
+.summary-svg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border: 1px solid rgba(134, 220, 163, 0.2);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(136, 231, 170, 0.16), transparent 58%),
+    rgba(10, 19, 17, 0.78);
+  color: rgba(167, 233, 190, 0.88);
+  overflow: visible;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 12px rgba(95, 208, 142, 0.08);
+}
+
+.summary-svg path,
+.summary-svg circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.summary-icon::before,
+.summary-icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.summary-icon.health::before {
+  left: 6px;
+  top: 10px;
+  width: 10px;
+  height: 6px;
+  border: 1.5px solid rgba(122, 225, 157, 0.9);
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(-45deg);
+}
+
+.summary-icon.weather::before {
+  left: 7px;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(216, 180, 92, 0.86);
+  box-shadow: 0 0 8px rgba(216, 180, 92, 0.26);
+}
+
+.summary-icon.rain::before {
+  left: 8px;
+  top: 5px;
+  width: 7px;
+  height: 10px;
+  border-radius: 7px 7px 7px 0;
+  background: rgba(98, 168, 197, 0.9);
+  transform: rotate(45deg);
+}
+
+.summary-icon.evap::before {
+  left: 6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid rgba(122, 225, 157, 0.82);
+  border-radius: 50%;
+}
+
+.summary-icon.evap::after {
+  left: 9px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border-left: 1.5px solid rgba(216, 180, 92, 0.72);
+  border-radius: 50%;
+}
+
+.watering-advice {
+  padding: 14px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(107, 216, 156, 0.14), transparent 42%),
+    rgba(15, 27, 25, 0.76);
+}
+
+.watering-advice strong {
+  display: block;
+  margin-top: 9px;
+  color: rgba(245, 244, 235, 0.92);
+  font-size: 15px;
+  font-weight: 520;
+  line-height: 1.6;
+}
+
+.plant-bottom {
+  margin: 0 18px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: 10px;
+}
+
+.plant-list-card,
+.weather-chart-card {
+  padding: 12px;
+  overflow: hidden;
+}
+
+.plant-row {
+  display: grid;
+  grid-template-columns: 54px 1fr 72px;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(196, 178, 122, 0.12);
+}
+
+.plant-row:last-child {
+  border-bottom: 0;
+}
+
+.plant-row em {
+  color: rgba(214, 226, 217, 0.6);
+  font-size: 10px;
+  font-style: normal;
+  text-align: right;
+}
+
+.watering-chart {
+  width: 100%;
+  height: 124px;
+  margin-top: 4px;
+  overflow: visible;
+}
+
+.watering-chart .chart-grid-line {
+  fill: none;
+  stroke: rgba(211, 190, 139, 0.12);
+  stroke-width: 1;
+}
+
+.watering-chart .rain-bars {
+  fill: none;
+  stroke: rgba(96, 159, 183, 0.45);
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.water-saving-note {
+  margin-top: 5px;
+  color: rgba(205, 214, 207, 0.58);
+  font-size: 10px;
+}
+
+.water-saving-note strong {
+  color: rgba(116, 224, 158, 0.92);
+  font-size: 16px;
+  font-weight: 520;
+}
+
+.water-saving-note span {
+  display: block;
+  margin-top: 3px;
+  margin-left: 0;
+  color: rgba(205, 214, 207, 0.48);
+}
+
+.chart-legend.small {
+  position: static;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: rgba(205, 214, 207, 0.56);
+  font-size: 9px;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.chart-legend.small span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.chart-legend.small span::before {
+  display: none;
+}
+
+.weather-dot,
+.temp-line,
+.water-bar {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.weather-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(217, 184, 104, 0.9);
+}
+
+.temp-line {
+  width: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(221, 176, 93, 0.86);
+}
+
+.water-bar {
+  width: 6px;
+  height: 10px;
+  border-radius: 3px;
+  background: rgba(89, 176, 214, 0.82);
+}
+
+.watering-chart .water-volume-bars {
+  fill: none;
+  stroke: rgba(89, 176, 214, 0.68);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.watering-chart .temperature-line {
+  fill: none;
+  stroke: rgba(221, 176, 93, 0.9);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px rgba(221, 176, 93, 0.24));
+}
+
+.watering-chart .weather-symbol {
+  stroke: rgba(245, 241, 222, 0.55);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.watering-chart text {
+  display: none;
+}
+
+.watering-chart .weather-symbol.sun {
+  fill: rgba(221, 176, 93, 0.86);
+  stroke: rgba(243, 225, 171, 0.62);
+}
+
+.watering-chart .weather-symbol.cloud {
+  fill: rgba(142, 162, 160, 0.82);
+}
+
+.watering-chart .weather-symbol.rain {
+  fill: rgba(89, 149, 183, 0.84);
+}
+
+.watering-chart .weather-symbol.rain path:last-child {
+  fill: none;
+  stroke: rgba(113, 185, 217, 0.9);
+}
+
+.watering-chart .weather-symbol.hot {
+  filter: drop-shadow(0 0 6px rgba(221, 176, 93, 0.42));
+}
+
+.watering-chart text {
+  fill: rgba(205, 214, 207, 0.52);
+  font-size: 11px;
+}
+
+.happiness-web-screen {
+  padding: 0 18px 18px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(214, 179, 106, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(20, 24, 26, 0.96), rgba(8, 11, 14, 0.98));
+}
+
+.web-app-top {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  margin: 0 -18px 14px;
+  padding: 15px 18px 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(8, 11, 14, 0.96), rgba(8, 11, 14, 0.72));
+  backdrop-filter: blur(12px);
+}
+
+.web-app-top span {
+  display: block;
+  color: rgba(214, 179, 106, 0.78);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.web-app-top strong {
+  display: block;
+  margin-top: 3px;
+  color: rgba(247, 244, 235, 0.92);
+  font-size: 15px;
+  font-weight: 520;
+}
+
+.web-app-top button {
+  border: 1px solid rgba(214, 179, 106, 0.24);
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: rgba(20, 26, 28, 0.72);
+  color: rgba(245, 239, 226, 0.78);
+  font-size: 11px;
+}
+
+.lisa-web-hero {
+  position: relative;
+  min-height: 128px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid rgba(214, 179, 106, 0.18);
+  border-radius: 16px;
+  padding: 17px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 42%, rgba(91, 207, 187, 0.14), transparent 36%),
+    rgba(15, 21, 24, 0.72);
+}
+
+.lisa-greeting span {
+  color: rgba(132, 214, 198, 0.78);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.lisa-greeting h4 {
+  margin: 8px 0 8px;
+  color: rgba(248, 247, 240, 0.96);
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 520;
+}
+
+.lisa-greeting p {
+  margin: 0;
+  color: rgba(218, 222, 215, 0.64);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.lisa-orb {
+  width: 94px;
+  height: 94px;
+  border: 1px solid rgba(132, 214, 198, 0.28);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 38% 32%, rgba(157, 238, 221, 0.42), rgba(72, 143, 135, 0.18) 42%, rgba(11, 18, 22, 0.78) 72%);
+  box-shadow: 0 0 28px rgba(96, 213, 191, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.lisa-orb span {
+  width: 42px;
+  height: 42px;
+  border-radius: inherit;
+  border: 1px solid rgba(244, 229, 184, 0.42);
+  background: rgba(244, 229, 184, 0.08);
+}
+
+.lisa-web-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.lisa-web-grid button,
+.lisa-chat-card {
+  border: 1px solid rgba(214, 179, 106, 0.16);
+  border-radius: 13px;
+  background: rgba(14, 20, 23, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.lisa-web-grid button {
+  min-height: 62px;
+  padding: 11px 12px;
+  text-align: left;
+  color: inherit;
+}
+
+.lisa-web-grid span,
+.chat-row span {
+  display: block;
+  color: rgba(214, 179, 106, 0.76);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.lisa-web-grid strong {
+  display: block;
+  margin-top: 6px;
+  color: rgba(244, 243, 235, 0.9);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.lisa-chat-card {
+  margin-top: 10px;
+  padding: 11px;
+  display: grid;
+  gap: 8px;
+}
+
+.chat-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+
+.chat-row p {
+  margin: 0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: rgba(228, 231, 224, 0.75);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.chat-row.user p {
+  background: rgba(214, 179, 106, 0.1);
+  color: rgba(245, 239, 226, 0.84);
 }

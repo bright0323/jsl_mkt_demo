@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>星河帝寶｜節能主題</title>
+    <meta name="theme-color" content="#060b12" />
+    <style>
+      :root { background: #060b12; }
+      html, body { margin: 0; min-height: 100%; background: #060b12; color: #f5efe2; }
+      .stage { background: #060b12; }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=20260530-frame" />
+    <link rel="stylesheet" href="safety.css?v=20260601-framework" />
+  </head>
+  <body style="background: #060b12; color: #f5efe2">
+    <main class="stage safety-stage" style="background: #060b12" aria-label="星河帝寶節能主題">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="safety-shade" aria-hidden="true"></div>
+      <div class="safety-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="safety-grid" aria-hidden="true"></div>
+
+      <section class="safety-workbench" aria-label="節能主題內容">
+        <div class="detail-bar">
+          <nav class="item-tabs" aria-label="節能主題項目">
+            <button class="item-tab is-active" type="button" data-item="overview">節能總覽</button>
+            <button class="item-tab" type="button" data-item="bems">BEMS 建築節能</button>
+            <button class="item-tab" type="button" data-item="charging">充電樁能源管理</button>
+            <button class="item-tab" type="button" data-item="irrigation">數位雙生澆灌</button>
+          </nav>
+        </div>
+
+        <article class="smart-item overview-panel is-active" data-panel="overview">
+          <div class="item-copy overview-copy">
+            <h2>節能</h2>
+            <h3>讓能源看得見，也讓浪費少一點</h3>
+            <p>從建築能源管理、充電樁調度，到電梯節能與澆灌管理，智慧系統協助社區掌握能源使用脈絡，讓舒適生活與永續管理更自然地並行。</p>
+          </div>
+          <div class="demo-area">
+            <button class="feature-video" type="button" data-open-video="能源效率.mp4" aria-label="播放節能總覽影片">
+              <video src="能源效率.mp4" muted playsinline preload="metadata"></video>
+              <span class="play-mark" aria-hidden="true"></span>
+              <span class="video-label">節能總覽影片</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="smart-item" data-panel="bems">
+          <div class="demo-area">
+            <div class="tablet-frame">
+              <div class="device-screen maintenance-screen">
+                <div class="screen-top"><span>Building Energy Management</span><strong>BEMS 能源中控</strong></div>
+                <div class="impact-hero-card">
+                  <span>節能成效（本月節省 3,200 kWh）</span>
+                  <div>
+                    <strong><small>與未使用 AI 相比</small><b>13%</b></strong>
+                    <strong><small>相當於少砍</small><b>72 棵樹</b></strong>
+                    <strong><small>相當於守護</small><b>3 隻北極熊</b></strong>
+                  </div>
+                </div>
+                <div class="control-summary energy-summary">
+                  <div><span>目前用電負載</span><strong>82%</strong></div>
+                  <div class="attention"><span>AI 預估峰值</span><strong>94%</strong></div>
+                  <div><span>本月累積用電</span><strong>24,600 <em>kWh</em></strong></div>
+                  <div><span>卸載建議</span><strong>4 項</strong></div>
+                </div>
+                <div class="bems-grid">
+                  <section class="bems-chart-card">
+                    <div class="panel-head">
+                      <span>歷史監控與未來 24H AI 預測</span>
+                      <small>用電負載</small>
+                    </div>
+                    <div class="power-chart" aria-label="AI 用電曲線預測圖">
+                      <div class="chart-legend">
+                        <span class="legend-limit">契約容量上限</span>
+                        <span class="legend-current">目前用電負載</span>
+                        <span class="legend-forecast">AI 未來負載預測</span>
+                      </div>
+                      <span class="limit-line"></span>
+                      <svg viewBox="0 0 320 142" role="img" aria-label="用電負載折線圖" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="actualArea" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="rgba(125, 207, 166, 0.28)" />
+                            <stop offset="100%" stop-color="rgba(125, 207, 166, 0)" />
+                          </linearGradient>
+                          <linearGradient id="forecastArea" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="rgba(232, 200, 133, 0.26)" />
+                            <stop offset="100%" stop-color="rgba(232, 200, 133, 0)" />
+                          </linearGradient>
+                        </defs>
+                        <path class="chart-area current-area" d="M14 124 L14 99 L24 92 L34 101 L44 96 L54 108 L64 104 L74 87 L84 94 L94 84 L104 91 L114 70 L124 76 L134 65 L144 73 L154 58 L164 66 L174 55 L184 62 L194 52 L204 58 L204 124 Z" />
+                        <path class="chart-area forecast-area" d="M204 124 L204 58 L216 54 L228 49 L240 43 L252 35 L264 38 L276 29 L288 33 L300 24 L314 27 L314 124 Z" />
+                        <polyline class="chart-line current-chart-line" points="14,99 24,92 34,101 44,96 54,108 64,104 74,87 84,94 94,84 104,91 114,70 124,76 134,65 144,73 154,58 164,66 174,55 184,62 194,52 204,58" />
+                        <polyline class="chart-line forecast-chart-line" points="204,58 216,54 228,49 240,43 252,35 264,38 276,29 288,33 300,24 314,27" />
+                      </svg>
+                      <div class="chart-axis"><span>昨日</span><span>06:00</span><span>12:00</span><span>18:00</span><span>未來</span></div>
+                    </div>
+                    <div class="ai-advice bems-advice">
+                      <span>AI 卸載提醒</span>
+                      <strong>預估晚間尖峰接近契約用電警戒，建議管理員提前確認卸載策略。</strong>
+                      <small>依過去運轉紀錄與即時負載估算。</small>
+                    </div>
+                  </section>
+                  <section class="load-shed-card">
+                    <div class="panel-head">
+                      <span>建議卸載項目</span>
+                      <small>待管理員確認</small>
+                    </div>
+                    <div class="usage-share">
+                      <div class="share-ring">
+                        <strong>占比</strong>
+                      </div>
+                      <div class="share-list">
+                        <div><i class="share-ac"></i><span>空調</span><strong>46%</strong></div>
+                        <div><i class="share-light"></i><span>照明</span><strong>28%</strong></div>
+                        <div><i class="share-vent"></i><span>排風</span><strong>16%</strong></div>
+                        <div><i class="share-other"></i><span>其他</span><strong>10%</strong></div>
+                      </div>
+                    </div>
+                    <div class="load-shed-list">
+                      <div><span>公設空調</span><strong>分區調整</strong></div>
+                      <div><span>公設照明</span><strong>延後啟動</strong></div>
+                      <div><span>停車場排風</span><strong>低速排程</strong></div>
+                      <div><span>景觀照明</span><strong>延後 15 分</strong></div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-copy">
+            <div class="item-title-row">
+              <h2>BEMS 建築節能</h2>
+              <button
+                class="info-trigger"
+                type="button"
+                aria-label="查看 BEMS 建築節能補充說明"
+                data-info-title="BEMS 建築節能"
+                data-info-copy="BEMS 建築節能不只是看見用電，更能依照即時負載做出調整。AI 會根據社區目前用電狀況，調控公設區域的空調與照明系統，協助避免超出契約用電範圍，減少不必要的能源浪費。對社區來說，這代表節能不再只靠人工經驗，而是有系統地協助控管長期營運成本。"
+              >
+                i
+              </button>
+            </div>
+            <h3>智慧調控，少一分超載風險</h3>
+            <p>AI 依照社區即時用電負載，調整公設空調與照明運轉，協助避免超出契約用電範圍，讓節能管理更主動，也讓長期營運成本更有依據。</p>
+            <div class="point-list">
+              <div><strong>即時掌握負載</strong><span>系統監測公設空調、照明與機電設備用電狀態，讓社區掌握目前能源使用是否接近契約用電範圍。</span></div>
+              <div><strong>AI 主動調控</strong><span>依照用電負載調整公設區域空調與照明，減少不必要耗能，也降低超約用電風險。</span></div>
+              <div><strong>成本控管有感</strong><span>透過更精準的設備調度，協助社區控管長期營運成本，讓節能變成日常管理的一部分。</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="smart-item" data-panel="charging">
+          <div class="demo-area">
+            <div class="tablet-frame">
+              <div class="device-screen ev-charge-screen">
+                <div class="ev-cockpit-top">
+                  <span>EV CHARGING</span>
+                  <strong>B2-118｜離峰充電中</strong>
+                </div>
+                <section class="ev-cockpit">
+                  <div class="ev-main-readout">
+                    <span>BATTERY</span>
+                    <strong>62%</strong>
+                    <em>預估 07:20 完成</em>
+                  </div>
+                  <div class="ev-car-stage" aria-label="電動車充電 62%">
+                    <div class="ev-aura"></div>
+                    <div class="ev-fill-plane"></div>
+                    <img class="ev-car-source" src="car.svg" alt="電動車充電示意" />
+                    <svg class="ev-reference-car" viewBox="0 0 760 320" role="img" aria-label="電動車側面線稿充電示意">
+                      <defs>
+                        <linearGradient id="evBodyPaint" x1="96" x2="690" y1="86" y2="226" gradientUnits="userSpaceOnUse">
+                          <stop offset="0" stop-color="#263236" />
+                          <stop offset=".48" stop-color="#10191d" />
+                          <stop offset="1" stop-color="#2d332e" />
+                        </linearGradient>
+                        <linearGradient id="evBodySheen" x1="123" x2="636" y1="116" y2="165" gradientUnits="userSpaceOnUse">
+                          <stop offset="0" stop-color="#88f7dd" stop-opacity=".04" />
+                          <stop offset=".48" stop-color="#c8fff4" stop-opacity=".24" />
+                          <stop offset="1" stop-color="#d4b574" stop-opacity=".12" />
+                        </linearGradient>
+                        <linearGradient id="evGlassPaint" x1="248" x2="510" y1="74" y2="137" gradientUnits="userSpaceOnUse">
+                          <stop offset="0" stop-color="#6fd8d2" stop-opacity=".28" />
+                          <stop offset=".55" stop-color="#1f3b44" stop-opacity=".86" />
+                          <stop offset="1" stop-color="#121b20" stop-opacity=".92" />
+                        </linearGradient>
+                        <radialGradient id="evWheelGlow" cx="50%" cy="50%" r="55%">
+                          <stop offset="0" stop-color="#72ead7" stop-opacity=".34" />
+                          <stop offset=".48" stop-color="#172226" stop-opacity=".96" />
+                          <stop offset="1" stop-color="#040607" />
+                        </linearGradient>
+                      </defs>
+                      <ellipse class="ev-ref-shadow" cx="380" cy="244" rx="282" ry="18" />
+                      <path class="ev-ref-main" d="M92 218 L101 172 L142 156 L226 145 L282 104 C316 78 359 66 410 68 L515 72 L566 112 L618 151 L676 165 L704 188 L704 218 L652 225 M557 225 L240 225 M146 225 L100 225 L92 218Z" />
+                      <path class="ev-ref-main" d="M226 145 L282 104 C316 78 359 66 410 68 L515 72 L566 112 L594 146" />
+                      <path class="ev-ref-glass" d="M256 140 L294 107 C324 85 362 76 406 78 L404 140Z" />
+                      <path class="ev-ref-glass" d="M419 78 L491 82 L492 140 L419 140Z" />
+                      <path class="ev-ref-glass" d="M506 84 L536 96 L574 140 L507 140Z" />
+                      <path class="ev-ref-detail" d="M381 78 L381 140 M500 83 L500 140" />
+                      <path class="ev-ref-detail" d="M101 174 L226 165 L592 165 L676 183" />
+                      <path class="ev-ref-detail" d="M291 140 L291 225" />
+                      <path class="ev-ref-detail" d="M493 140 L493 225" />
+                      <path class="ev-ref-detail" d="M321 170 L362 170" />
+                      <path class="ev-ref-detail" d="M527 170 L558 170" />
+                      <path class="ev-ref-detail" d="M96 190 L146 188" />
+                      <path class="ev-ref-detail" d="M657 188 L701 196" />
+                      <path class="ev-ref-arch" d="M146 225 A47 47 0 0 1 240 225" />
+                      <path class="ev-ref-arch" d="M557 225 A47 47 0 0 1 652 225" />
+                      <circle class="ev-ref-wheel" cx="193" cy="225" r="44" />
+                      <circle class="ev-ref-wheel" cx="604.5" cy="225" r="44" />
+                      <circle class="ev-ref-rim" cx="193" cy="225" r="31" />
+                      <circle class="ev-ref-rim" cx="604.5" cy="225" r="31" />
+                      <circle class="ev-ref-hub" cx="193" cy="225" r="15" />
+                      <circle class="ev-ref-hub" cx="604.5" cy="225" r="15" />
+                      <path class="ev-ref-charge" d="M124 279 C252 296 507 296 644 276" />
+                    </svg>
+                    <div class="ev-charge-port">
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="ev-side-panel">
+                    <div>
+                      <span>充電功率</span>
+                      <strong>7.2 <em>kW</em></strong>
+                    </div>
+                    <div>
+                      <span>本次用電</span>
+                      <strong>18.6 <em>kWh</em></strong>
+                    </div>
+                    <div>
+                      <span>費用估算</span>
+                      <strong>$86</strong>
+                    </div>
+                  </div>
+                </section>
+                <section class="ev-bottom-console">
+                  <div class="ev-charge-progress">
+                    <div class="ev-progress-label">
+                      <span>智慧負載分配中</span>
+                      <strong>社區用電穩定，維持離峰充電</strong>
+                    </div>
+                    <div class="ev-progress-track"><span></span></div>
+                  </div>
+                  <div class="ev-console-metrics">
+                    <div><span>離峰節省</span><strong>18%</strong></div>
+                    <div><span>本月累積</span><strong>142 <em>kWh</em></strong></div>
+                    <div><span>獨立電表</span><strong>已計費</strong></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="item-copy">
+            <div class="item-title-row">
+              <h2>充電樁能源管理</h2>
+              <button
+                class="info-trigger"
+                type="button"
+                aria-label="查看充電樁能源管理補充說明"
+                data-info-title="充電樁能源管理"
+                data-info-copy="充電樁能源管理讓電動車生活不只是能充電，而是能安全、有秩序地充電。每戶可於自家車位安裝私戶充電樁，搭配獨立電表與線路控制；當多戶同時充電時，系統可依社區用電狀態分配功率、安排充電順序，避免同時高功率充電造成用電風險。透過離峰充電與獨立電表計費，充電成本與使用紀錄也更清楚。"
+              >
+                i
+              </button>
+            </div>
+            <h3>智慧分配，安心充電</h3>
+            <p>私戶充電樁搭配獨立電表與智慧負載管理，系統可依社區用電狀態分配功率、安排充電順序，讓每一次充電都更安全、更有秩序，也更容易掌握費用。</p>
+            <div class="point-list">
+              <div><strong>負載平衡不危險</strong><span>系統依社區用電狀態調整充電功率，避免多戶同時高功率充電造成用電風險。</span></div>
+              <div><strong>離峰充電更省錢</strong><span>可依離峰時段安排充電順序，避開高電價時段，讓充電成本更有機會被控管。</span></div>
+              <div><strong>充電資訊更透明</strong><span>每戶搭配獨立電表計算用電，充電度數、費用與使用紀錄都能更清楚掌握。</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="smart-item" data-panel="irrigation">
+          <div class="demo-area">
+            <div class="tablet-frame">
+              <div class="device-screen maintenance-screen irrigation-screen">
+                <div class="screen-top"><span>Landscape Digital Twin</span><strong>植栽數位雙生</strong></div>
+                <section class="plant-dashboard">
+                  <div class="plant-model-card">
+                    <div class="plant-card-head">
+                      <span>中庭樹島</span>
+                      <strong>Digital Twin Model</strong>
+                    </div>
+                    <div class="plant-model" aria-label="中庭樹島植栽數位雙生模型">
+                      <img class="plant-twin-image" src="plant-twin.png.png" alt="中庭樹島植栽數位雙生模型" />
+                    </div>
+                  </div>
+                  <div class="plant-side">
+                    <div class="plant-summary">
+                      <div>
+                        <span>植栽健康</span><strong>92%</strong>
+                      </div>
+                      <div>
+                        <span>今日天氣</span><strong>晴午後雲</strong>
+                      </div>
+                      <div>
+                        <span>降雨機率</span><strong>20%</strong>
+                      </div>
+                      <div class="warning">
+                        <span>蒸散量</span><strong>偏高</strong>
+                      </div>
+                    </div>
+                    <div class="watering-advice">
+                      <span>今日澆灌排程</span>
+                      <strong>日照偏強、土壤濕度略降，系統排程 16:30 進行澆灌，水量增加 15%。</strong>
+                    </div>
+                  </div>
+                </section>
+                <section class="plant-bottom">
+                  <div class="plant-list-card">
+                    <div class="mini-title">植栽狀態</div>
+                    <div class="plant-row"><span>樟樹</span><strong>健康 92%</strong><em>深根型</em></div>
+                    <div class="plant-row"><span>桂花</span><strong>健康 88%</strong><em>中等需水</em></div>
+                    <div class="plant-row"><span>灌木帶</span><strong>健康 90%</strong><em>表層偏乾</em></div>
+                  </div>
+                  <div class="weather-chart-card">
+                    <div class="chart-head">
+                      <div>
+                        <div class="mini-title">氣候 × 澆水量</div>
+                        <div class="water-saving-note">本週省水 <strong>16%</strong> <span>(與定時定量相比)</span></div>
+                      </div>
+                      <div class="chart-legend small">
+                        <span><i class="temp-line"></i>氣溫曲線</span>
+                        <span><i class="water-bar"></i>澆水量長條</span>
+                      </div>
+                    </div>
+                    <svg class="watering-chart" viewBox="0 0 360 150" aria-label="氣候與澆灌水量關係圖">
+                      <path class="chart-grid-line" d="M32 28 H336 M32 66 H336 M32 104 H336" />
+                      <path class="water-volume-bars" d="M58 104 V62 M112 104 V74 M166 104 V96 M220 104 V52 M274 104 V58 M328 104 V78" />
+                      <path class="temperature-line" d="M58 82 C84 70 92 66 112 68 C138 70 146 82 166 90 C190 98 200 58 220 44 C244 30 260 38 274 48 C300 60 310 62 328 56" />
+                      <g class="weather-symbol sun" transform="translate(58 124)">
+                        <circle r="4.5" />
+                        <path d="M0 -9 V-6 M0 6 V9 M-9 0 H-6 M6 0 H9 M-6.5 -6.5 L-4.4 -4.4 M4.4 4.4 L6.5 6.5 M6.5 -6.5 L4.4 -4.4 M-4.4 4.4 L-6.5 6.5" />
+                      </g>
+                      <g class="weather-symbol cloud" transform="translate(112 124)">
+                        <path d="M-9 3 H8 C12 3 13 -4 8 -5 C6 -10 -1 -10 -3 -5 C-8 -6 -12 -2 -9 3Z" />
+                      </g>
+                      <g class="weather-symbol rain" transform="translate(166 124)">
+                        <path d="M-9 0 H8 C12 0 13 -6 8 -7 C6 -12 -1 -12 -3 -7 C-8 -8 -12 -4 -9 0Z" />
+                        <path d="M-5 6 L-7 10 M1 6 L-1 10 M7 6 L5 10" />
+                      </g>
+                      <g class="weather-symbol sun hot" transform="translate(220 124)">
+                        <circle r="4.5" />
+                        <path d="M0 -9 V-6 M0 6 V9 M-9 0 H-6 M6 0 H9 M-6.5 -6.5 L-4.4 -4.4 M4.4 4.4 L6.5 6.5 M6.5 -6.5 L4.4 -4.4 M-4.4 4.4 L-6.5 6.5" />
+                      </g>
+                      <g class="weather-symbol sun hot" transform="translate(274 124)">
+                        <circle r="4.5" />
+                        <path d="M0 -9 V-6 M0 6 V9 M-9 0 H-6 M6 0 H9 M-6.5 -6.5 L-4.4 -4.4 M4.4 4.4 L6.5 6.5 M6.5 -6.5 L4.4 -4.4 M-4.4 4.4 L-6.5 6.5" />
+                      </g>
+                      <g class="weather-symbol cloud" transform="translate(328 124)">
+                        <path d="M-9 3 H8 C12 3 13 -4 8 -5 C6 -10 -1 -10 -3 -5 C-8 -6 -12 -2 -9 3Z" />
+                      </g>
+                    </svg>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="item-copy">
+            <div class="item-title-row">
+              <h2>數位雙生澆灌</h2>
+              <button
+                class="info-trigger"
+                type="button"
+                aria-label="查看數位雙生澆灌補充說明"
+                data-info-title="數位雙生澆灌"
+                data-info-copy="數位雙生澆灌會為社區植栽建立數位分身，模擬不同樹種與根系的生長需求，再結合氣候與土壤感測資訊，進行適當的澆灌。對您來說，看到的是長期維持的社區綠意；對管理來說，則是更精準、更不浪費的景觀照護方式。"
+              >
+                i
+              </button>
+            </div>
+            <h3>用水更精準，綠意更持久</h3>
+            <p>結合氣候與土壤感測資訊，透過植栽數位雙生模型運算，給予剛好的水分，讓社區綠意健康漂亮，用水精準不浪費。</p>
+            <div class="point-list">
+              <div><strong>綠意健康長久</strong><span>依植栽狀態與環境變化調整澆灌，讓社區景觀不只一開始漂亮，更能被長期照顧。</span></div>
+              <div><strong>澆灌不靠猜測</strong><span>系統參考樹種、根系、土壤與氣候資訊，協助判斷每一區需要的水分，減少人工經驗落差。</span></div>
+              <div><strong>用水剛好不浪費</strong><span>不是澆越多越好，而是給植物真正需要的水，減少過度澆灌與水資源浪費。</span></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <a class="back-home" href="index.html" aria-label="返回首頁">返回</a>
+      <div class="video-modal" aria-hidden="true"><button class="modal-close" type="button" aria-label="關閉影片">×</button><video controls playsinline></video></div>
+      <div class="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="info-title"><div class="info-dialog"><button class="info-close" type="button" aria-label="關閉補充說明">×</button><h2 id="info-title"></h2><p class="info-copy"></p></div></div>
+    </main>
+    <script src="safety.js"></script>
+  </body>
+</html>
