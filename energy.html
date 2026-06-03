@@ -37,8 +37,8 @@
         <article class="smart-item overview-panel is-active" data-panel="overview">
           <div class="item-copy overview-copy">
             <h2>節能</h2>
-            <h3>讓能源看得見，也讓浪費少一點</h3>
-            <p>從建築能源管理、充電樁調度，到電梯節能與澆灌管理，智慧系統協助社區掌握能源使用脈絡，讓舒適生活與永續管理更自然地並行。</p>
+            <h3>舒適照常，浪費更少</h3>
+            <p>從 BEMS 建築節能、充電樁用電，到數位雙生澆灌管理，節能不只是看見用電數字，而是落在每一次公設運轉、每一段離峰充電、每一滴用水調度的日常裡。我們以智慧系統協助社區提前掌握、適時調整，讓資源運用更有餘裕，也讓舒適品質不打折。</p>
           </div>
           <div class="demo-area">
             <button class="feature-video" type="button" data-open-video="能源效率.mp4" aria-label="播放節能總覽影片">
@@ -161,15 +161,15 @@
               <div class="device-screen ev-charge-screen">
                 <div class="ev-cockpit-top">
                   <span>EV CHARGING</span>
-                  <strong>B2-118｜離峰充電中</strong>
+                  <strong>B2-118 車位</strong>
                 </div>
                 <section class="ev-cockpit">
                   <div class="ev-main-readout">
-                    <span>BATTERY</span>
-                    <strong>62%</strong>
-                    <em>預估 07:20 完成</em>
+                    <span>OFF-PEAK MODE</span>
+                    <strong>離峰充電中</strong>
+                    <em>22:30 - 07:30｜目前採離峰費率</em>
                   </div>
-                  <div class="ev-car-stage" aria-label="電動車充電 62%">
+                  <div class="ev-car-stage" aria-label="電動車正在離峰充電">
                     <div class="ev-aura"></div>
                     <div class="ev-fill-plane"></div>
                     <img class="ev-car-source" src="car.svg" alt="電動車充電示意" />
@@ -220,30 +220,27 @@
                       <circle class="ev-ref-hub" cx="604.5" cy="225" r="15" />
                       <path class="ev-ref-charge" d="M124 279 C252 296 507 296 644 276" />
                     </svg>
-                    <div class="ev-charge-port">
-                      <span></span>
-                    </div>
                   </div>
                   <div class="ev-side-panel">
                     <div>
-                      <span>充電功率</span>
+                      <span>目前功率</span>
                       <strong>7.2 <em>kW</em></strong>
                     </div>
                     <div>
-                      <span>本次用電</span>
-                      <strong>18.6 <em>kWh</em></strong>
+                      <span>離峰費率</span>
+                      <strong>$2.08 <em>/kWh</em></strong>
                     </div>
                     <div>
-                      <span>費用估算</span>
-                      <strong>$86</strong>
+                      <span>尖峰費率</span>
+                      <strong>$4.42 <em>/kWh</em></strong>
                     </div>
                   </div>
                 </section>
                 <section class="ev-bottom-console">
                   <div class="ev-charge-progress">
                     <div class="ev-progress-label">
-                      <span>智慧負載分配中</span>
-                      <strong>社區用電穩定，維持離峰充電</strong>
+                      <span>社區用電負載量</span>
+                      <strong>目前 62%｜社區用電穩定</strong>
                     </div>
                     <div class="ev-progress-track"><span></span></div>
                   </div>
@@ -287,7 +284,7 @@
                 <section class="plant-dashboard">
                   <div class="plant-model-card">
                     <div class="plant-card-head">
-                      <span>中庭樹島</span>
+                      <span>智慧澆灌原理</span>
                       <strong>Digital Twin Model</strong>
                     </div>
                     <div class="plant-model" aria-label="中庭樹島植栽數位雙生模型">
@@ -317,10 +314,12 @@
                 </section>
                 <section class="plant-bottom">
                   <div class="plant-list-card">
-                    <div class="mini-title">植栽狀態</div>
-                    <div class="plant-row"><span>樟樹</span><strong>健康 92%</strong><em>深根型</em></div>
-                    <div class="plant-row"><span>桂花</span><strong>健康 88%</strong><em>中等需水</em></div>
-                    <div class="plant-row"><span>灌木帶</span><strong>健康 90%</strong><em>表層偏乾</em></div>
+                    <div class="mini-title">感測數值</div>
+                    <div class="plant-row"><span>今日蒸散量</span><strong>4.8 mm/day</strong></div>
+                    <div class="plant-row"><span>植栽類型</span><strong>觀葉灌木、地被</strong></div>
+                    <div class="plant-row"><span>有效根系深度</span><strong>30 cm</strong></div>
+                    <div class="plant-row"><span>土壤類型</span><strong>壤土</strong></div>
+                    <div class="plant-row"><span>土壤含水率</span><strong>23%</strong></div>
                   </div>
                   <div class="weather-chart-card">
                     <div class="chart-head">
